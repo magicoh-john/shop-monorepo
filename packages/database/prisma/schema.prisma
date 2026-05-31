@@ -1,0 +1,117 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("user")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  orders    Order[]
+  cart      Cart?
+
+  @@map("users")
+}
+
+model Category {
+  id        String  @id @default(cuid())
+  name      String
+  slug      String  @unique
+  emoji     String?
+  parentId  String? @map("parent_id")
+  sortOrder Int     @default(0) @map("sort_order")
+
+  parent   Category?  @relation("CategoryTree", fields: [parentId], references: [id])
+  children Category[] @relation("CategoryTree")
+  products Product[]
+
+  @@map("categories")
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  productId   String   @unique @map("product_id")
+  name        String
+  description String?
+  price       Int
+  stock       Int      @default(0)
+  imageUrl    String?  @map("image_url")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  categoryId  String?   @map("category_id")
+  category    Category? @relation(fields: [categoryId], references: [id])
+  orderItems  OrderItem[]
+  cartItems   CartItem[]
+
+  @@map("products")
+}
+
+model SystemCode {
+  id         String @id @default(cuid())
+  groupCode  String @map("group_code")
+  groupLabel String @map("group_label")
+  code       String @unique
+  label      String
+  sortOrder  Int    @default(0) @map("sort_order")
+
+  @@map("system_codes")
+}
+
+model Order {
+  id            String   @id @default(cuid())
+  userId        String   @map("user_id")
+  statusCode    String   @default("PAID") @map("status_code")
+  receiverName  String   @map("receiver_name")
+  receiverPhone String   @map("receiver_phone")
+  address       String
+  totalPrice    Int      @map("total_price")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  user       User        @relation(fields: [userId], references: [id])
+  orderItems OrderItem[]
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id        String @id @default(cuid())
+  orderId   String @map("order_id")
+  productId String @map("product_id")
+  quantity  Int
+  price     Int
+
+  order   Order   @relation(fields: [orderId], references: [id])
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("order_items")
+}
+
+model Cart {
+  id        String   @id @default(cuid())
+  userId    String   @unique @map("user_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user      User       @relation(fields: [userId], references: [id])
+  cartItems CartItem[]
+
+  @@map("carts")
+}
+
+model CartItem {
+  id        String @id @default(cuid())
+  cartId    String @map("cart_id")
+  productId String @map("product_id")
+  quantity  Int
+
+  cart    Cart    @relation(fields: [cartId], references: [id])
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("cart_items")
+}

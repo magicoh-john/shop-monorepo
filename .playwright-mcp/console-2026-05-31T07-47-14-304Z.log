@@ -1,0 +1,95 @@
+[     250ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[     270ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[     327ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/products/..." tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+        <SegmentViewNode type="layout" pagePath="(shop)/lay...">
+          <SegmentTrieNode>
+          <script>
+          <script>
+          <ShopLayout>
+            <div className="min-h-scre...">
+              <Header>
+                <header className="bg-backgro...">
+                  <div className="max-w-5xl ...">
+                    <LinkComponent>
+                    <SearchBar>
+                    <nav className="flex items...">
+                      <LinkComponent>
+                      <LinkComponent>
+                      <CartIcon>
+                        <LinkComponent href="/cart" className="flex flex-...">
+                          <a className="flex flex-..." ref={function} onClick={function onClick} ...>
+                            <div className="relative">
+                              <ShoppingCart>
++                             <span
++                               className="absolute -top-1.5 -right-1.5 bg-primary text-primary-foreground text-xs rou..."
++                             >
+                            ...
+                      ...
+                  ...
+              ...
+      ...
+
+    at throwOnHydrationMismatch (http://localhost:3000/_next/static/chunks/0kic_next_dist_compiled_react-dom_0cwd7~c._.js:3318:56)
+    at beginWork (http://localhost:3000/_next/static/chunks/0kic_next_dist_compiled_react-dom_0cwd7~c._.js:6758:918)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/0kic_next_dist_compiled_react-dom_0cwd7~c._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/0kic_next_dist_compiled_react-dom_0cwd7~c._.js:9555:97)
+    at workLoopConcurrentByScheduler (http://localhost:3000/_next/static/chunks/0kic_next_dist_compiled_react-dom_0cwd7~c._.js:9551:58)
+    at renderRootConcurrent (http://localhost:3000/_next/static/chunks/0kic_next_dist_compiled_react-dom_0cwd7~c._.js:9534:71)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/0kic_next_dist_compiled_react-dom_0cwd7~c._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/0kic_next_dist_compiled_react-dom_0cwd7~c._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/0kic_next_dist_compiled_0-rd57x._.js:2647:64)
+[    9026ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[    9764ms] [LOG] [Fast Refresh] done in 853ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[   33280ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[   33712ms] [LOG] [Fast Refresh] done in 538ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[   70083ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 7999633ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 7999759ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 8127456ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 8166970ms] [LOG] [Fast Refresh] done in 167321ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9349042ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9350841ms] [LOG] [Fast Refresh] done in 1899ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9351819ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9352290ms] [LOG] [Fast Refresh] done in 583ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9353130ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9353489ms] [LOG] [Fast Refresh] done in 460ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9354180ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9354213ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9354365ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9354489ms] [LOG] [Fast Refresh] done in 235ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9926715ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[ 9927148ms] [LOG] [Fast Refresh] done in 544ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12254298ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12254830ms] [LOG] [Fast Refresh] done in 615ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12255119ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12255401ms] [LOG] [Fast Refresh] done in 387ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12255529ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12255614ms] [LOG] [Fast Refresh] done in 186ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12341223ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12341816ms] [LOG] [Fast Refresh] done in 692ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12342109ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12342464ms] [LOG] [Fast Refresh] done in 459ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12342733ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12342789ms] [LOG] [Fast Refresh] done in 159ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12343186ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12343202ms] [LOG] [Fast Refresh] done in 118ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12343866ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12344399ms] [LOG] [Fast Refresh] done in 603ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12344686ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12345042ms] [LOG] [Fast Refresh] done in 463ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12345603ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477
+[12345645ms] [LOG] [Fast Refresh] done in 143ms @ http://localhost:3000/_next/static/chunks/0kic_next_dist_0z41kha._.js:2477

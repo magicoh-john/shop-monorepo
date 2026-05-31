@@ -1,0 +1,18 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e92] [cursor=pointer]:
+    - img [ref=e93]
+  - alert [ref=e96]
+  - main [ref=e97]:
+    - generic [ref=e124]:
+      - heading "마이페이지" [level=1] [ref=e125]
+      - heading "주문 내역" [level=2] [ref=e126]
+      - generic [ref=e128]:
+        - generic [ref=e129]:
+          - paragraph [ref=e130]: 2026. 5. 31.
+          - generic [ref=e131]: 결제완료
+        - generic [ref=e133]:
+          - generic [ref=e134]: 오버핏 후드티 × 1
+          - generic [ref=e135]: 49,000원
+        - generic [ref=e136]:
+          - paragraph [ref=e137]: "합계: 49,000원"
+          - button "주문 취소" [ref=e139]

@@ -1,0 +1,77 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "ShopApp" [ref=e5] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e6]:
+          - textbox "상품명 또는 브랜드 입력" [ref=e7]
+          - button "검색" [ref=e8]:
+            - img [ref=e9]
+        - navigation [ref=e12]:
+          - link "카테고리" [ref=e13] [cursor=pointer]:
+            - /url: /products
+            - img [ref=e14]
+            - generic [ref=e19]: 카테고리
+          - link "로그인" [ref=e20] [cursor=pointer]:
+            - /url: /login
+            - img [ref=e21]
+            - generic [ref=e24]: 로그인
+      - navigation [ref=e25]:
+        - list [ref=e27]:
+          - listitem [ref=e28]:
+            - link "홈" [ref=e29] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e30]:
+            - link "전체상품" [ref=e31] [cursor=pointer]:
+              - /url: /products
+          - listitem [ref=e32]:
+            - link "패션의류" [ref=e33] [cursor=pointer]:
+              - /url: /categories/fashion
+          - listitem [ref=e34]:
+            - link "신발/가방" [ref=e35] [cursor=pointer]:
+              - /url: /categories/shoes-bags
+          - listitem [ref=e36]:
+            - link "액세서리" [ref=e37] [cursor=pointer]:
+              - /url: /categories/accessories
+          - listitem [ref=e38]:
+            - link "뷰티" [ref=e39] [cursor=pointer]:
+              - /url: /categories/beauty
+          - listitem [ref=e40]:
+            - link "스포츠" [ref=e41] [cursor=pointer]:
+              - /url: /categories/sports
+    - main [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - img "오버핏 후드티" [ref=e46]
+          - generic [ref=e47]:
+            - paragraph [ref=e48]: 상의
+            - heading "오버핏 후드티" [level=1] [ref=e49]
+            - paragraph [ref=e50]: 49,000원
+            - separator [ref=e51]
+            - generic [ref=e52]:
+              - generic [ref=e53]:
+                - generic [ref=e54]: 수량
+                - generic [ref=e55]:
+                  - button "−" [disabled] [ref=e56]
+                  - generic [ref=e57]: "1"
+                  - button "+" [ref=e58]
+                - generic [ref=e59]: 재고 60개
+              - generic [ref=e60]:
+                - button "주문하기" [ref=e61]
+                - button "장바구니 담기" [ref=e62]
+                - button "찜하기" [ref=e63]:
+                  - img [ref=e64]
+                  - text: 찜하기
+        - generic [ref=e66]:
+          - heading "리뷰" [level=2] [ref=e67]
+          - generic [ref=e68]: 아직 리뷰가 없습니다.
+        - generic [ref=e69]:
+          - heading "상품 상세정보" [level=2] [ref=e70]
+          - generic [ref=e71]:
+            - img "오버핏 후드티" [ref=e72]
+            - paragraph [ref=e74]: 루즈하게 입기 좋은 후드 스웨트셔츠
+    - contentinfo [ref=e75]:
+      - paragraph [ref=e77]: © 2026 ShopApp
+  - button "Open Next.js Dev Tools" [ref=e83] [cursor=pointer]:
+    - img [ref=e84]

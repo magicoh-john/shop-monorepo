@@ -1,0 +1,28 @@
+# my-monorepo/.aiignore
+#
+# ────────────────────────────────────────────────────────────────
+# 사용법: 본인 담당 영역 외의 경로 앞에 있는 주석(#)을 해제하세요.
+# 아래는 "B팀원 (상품 담당)"의 설정 예시입니다.
+# ────────────────────────────────────────────────────────────────
+
+# ── A팀원 전용 영역 (B, C팀원은 이 줄들의 주석을 해제) ──
+# /apps/web/src/app/admin/
+# /apps/web/src/app/api/admin/
+# /apps/web/src/features/admin/
+
+# ── B팀원 전용 영역 (A, C팀원은 이 줄들의 주석을 해제) ──
+# /apps/web/src/app/(shop)/
+# /apps/web/src/app/api/products/
+# /apps/web/src/features/products/
+
+# ── C팀원 전용 영역 (A, B팀원은 이 줄들의 주석을 해제) ──
+# /apps/web/src/app/(protected)/
+# /apps/web/src/app/api/order/
+# /apps/web/src/features/order/
+
+# ── 공통 설정 (전 팀원 수정 금지 — 절대 주석 해제하지 않음) ──
+/packages/database/prisma/schema.prisma
+/packages/types/
+/apps/web/src/app/api/auth/
+/apps/web/src/proxy.ts
+/CLAUDE.md

@@ -1,0 +1,41 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "0"
+          - generic [ref=e15]: "1"
+        - generic [ref=e16]: Issue
+      - button "Collapse issues badge" [ref=e17]:
+        - img [ref=e18]
+  - alert [ref=e106]
+  - main [ref=e107]:
+    - generic [ref=e108]:
+      - heading "주문 / 결제" [level=1] [ref=e109]
+      - generic [ref=e110]:
+        - generic [ref=e111]:
+          - heading "주문 상품" [level=2] [ref=e112]
+          - generic [ref=e114]:
+            - img "오버핏 후드티" [ref=e116]
+            - generic [ref=e117]:
+              - paragraph [ref=e118]: 오버핏 후드티
+              - paragraph [ref=e119]: 49,000원 × 7개
+            - paragraph [ref=e120]: 343,000원
+          - generic [ref=e121]:
+            - generic [ref=e122]: 총 결제 금액
+            - generic [ref=e123]: 343,000원
+        - generic [ref=e124]:
+          - heading "배송지 정보" [level=2] [ref=e125]
+          - generic [ref=e126]:
+            - generic [ref=e127]:
+              - text: 받는 분 이름
+              - textbox [ref=e128]
+            - generic [ref=e129]:
+              - text: 전화번호
+              - textbox "010-0000-0000" [ref=e130]
+            - generic [ref=e131]:
+              - text: 배송지 주소
+              - textbox [ref=e132]
+          - button "343,000원 결제 완료" [ref=e133]

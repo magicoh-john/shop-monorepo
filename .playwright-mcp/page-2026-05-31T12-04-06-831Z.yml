@@ -1,0 +1,61 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "ShopApp" [ref=e5] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e6]:
+          - textbox "상품명 또는 브랜드 입력" [ref=e7]
+          - button "검색" [ref=e8]:
+            - img [ref=e9]
+        - navigation [ref=e12]:
+          - link "카테고리" [ref=e13] [cursor=pointer]:
+            - /url: /products
+            - img [ref=e14]
+            - generic [ref=e19]: 카테고리
+          - link "마이쇼핑" [ref=e20] [cursor=pointer]:
+            - /url: /mypage
+            - img [ref=e21]
+            - generic [ref=e24]: 마이쇼핑
+          - link "장바구니" [ref=e25] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e27]
+            - generic [ref=e31]: 장바구니
+          - button "로그아웃" [ref=e33]
+      - navigation [ref=e34]:
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - link "홈" [ref=e38] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e39]:
+            - link "전체상품" [ref=e40] [cursor=pointer]:
+              - /url: /products
+          - listitem [ref=e41]:
+            - link "패션의류" [ref=e42] [cursor=pointer]:
+              - /url: /categories/fashion
+          - listitem [ref=e43]:
+            - link "신발/가방" [ref=e44] [cursor=pointer]:
+              - /url: /categories/shoes-bags
+          - listitem [ref=e45]:
+            - link "액세서리" [ref=e46] [cursor=pointer]:
+              - /url: /categories/accessories
+          - listitem [ref=e47]:
+            - link "뷰티" [ref=e48] [cursor=pointer]:
+              - /url: /categories/beauty
+          - listitem [ref=e49]:
+            - link "스포츠" [ref=e50] [cursor=pointer]:
+              - /url: /categories/sports
+    - main [ref=e51]:
+      - generic [ref=e52]:
+        - heading "전체 상품" [level=1] [ref=e54]
+        - generic [ref=e55]:
+          - button "전체" [ref=e56]
+          - button "👗패션의류" [ref=e57]
+          - button "👟신발/가방" [ref=e58]
+          - button "💍액세서리" [ref=e59]
+          - button "💄뷰티" [ref=e60]
+          - button "⚽스포츠" [ref=e61]
+    - contentinfo [ref=e111]:
+      - paragraph [ref=e113]: © 2026 ShopApp
+  - button "Open Next.js Dev Tools" [ref=e119] [cursor=pointer]:
+    - img [ref=e120]

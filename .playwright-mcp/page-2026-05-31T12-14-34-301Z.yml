@@ -1,0 +1,75 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "관리자 대시보드" [level=1] [ref=e4]
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - paragraph [ref=e7]: 전체 주문
+          - paragraph [ref=e8]: "1"
+        - generic [ref=e9]:
+          - paragraph [ref=e10]: 전체 상품
+          - paragraph [ref=e11]: "50"
+      - generic [ref=e12]:
+        - heading "주문 관리" [level=2] [ref=e13]
+        - table [ref=e16]:
+          - rowgroup [ref=e17]:
+            - row "주문일 고객명 금액 상태" [ref=e18]:
+              - columnheader "주문일" [ref=e19]
+              - columnheader "고객명" [ref=e20]
+              - columnheader "금액" [ref=e21]
+              - columnheader "상태" [ref=e22]
+          - rowgroup [ref=e23]:
+            - row "2026. 5. 31. 홍길동 49,000원 주문취소" [ref=e24]:
+              - cell "2026. 5. 31." [ref=e25]
+              - cell "홍길동" [ref=e26]
+              - cell "49,000원" [ref=e27]
+              - cell "주문취소" [ref=e28]:
+                - combobox [ref=e29]:
+                  - option "결제대기"
+                  - option "결제완료"
+                  - option "배송중"
+                  - option "배송완료"
+                  - option "주문취소" [selected]
+      - generic [ref=e30]:
+        - heading "상품 등록" [level=2] [ref=e31]
+        - generic [ref=e33]:
+          - generic [ref=e34]:
+            - text: 상품 코드 (productId)
+            - 'textbox "예: PROD-051" [ref=e35]': PROD-051
+          - generic [ref=e36]:
+            - text: 상품명
+            - textbox [ref=e37]: 테스트 상품
+          - generic [ref=e38]:
+            - text: 가격 (원)
+            - spinbutton [ref=e39]: "19000"
+          - generic [ref=e40]:
+            - text: 재고
+            - spinbutton [ref=e41]: "100"
+          - generic [ref=e42]:
+            - text: 카테고리
+            - combobox [ref=e43]:
+              - option "선택 안함" [selected]
+              - option "패션의류"
+              - option "신발/가방"
+              - option "액세서리"
+              - option "뷰티"
+              - option "스포츠"
+          - generic [ref=e44]:
+            - text: 설명
+            - textbox [ref=e45]
+          - generic [ref=e46]:
+            - text: 이미지 URL
+            - textbox [ref=e47]
+          - button "상품 등록" [ref=e48]
+  - generic [ref=e53] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e54]:
+      - img [ref=e55]
+    - generic [ref=e59]:
+      - button "Open issues overlay" [ref=e60]:
+        - generic [ref=e61]:
+          - generic [ref=e62]: "0"
+          - generic [ref=e63]: "1"
+        - generic [ref=e64]: Issue
+      - button "Collapse issues badge" [ref=e65]:
+        - img [ref=e66]
+  - alert [ref=e58]

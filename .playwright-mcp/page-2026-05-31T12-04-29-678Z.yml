@@ -1,0 +1,32 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e92] [cursor=pointer]:
+    - img [ref=e93]
+  - alert [ref=e96]
+  - main [ref=e97]:
+    - generic [ref=e98]:
+      - heading "주문 / 결제" [level=1] [ref=e99]
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - heading "주문 상품" [level=2] [ref=e102]
+          - generic [ref=e104]:
+            - img "오버핏 후드티" [ref=e106]
+            - generic [ref=e107]:
+              - paragraph [ref=e108]: 오버핏 후드티
+              - paragraph [ref=e109]: 49,000원 × 1개
+            - paragraph [ref=e110]: 49,000원
+          - generic [ref=e111]:
+            - generic [ref=e112]: 총 결제 금액
+            - generic [ref=e113]: 49,000원
+        - generic [ref=e114]:
+          - heading "배송지 정보" [level=2] [ref=e115]
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - text: 받는 분 이름
+              - textbox [ref=e118]
+            - generic [ref=e119]:
+              - text: 전화번호
+              - textbox "010-0000-0000" [ref=e120]
+            - generic [ref=e121]:
+              - text: 배송지 주소
+              - textbox [ref=e122]
+          - button "49,000원 결제 완료" [ref=e123]

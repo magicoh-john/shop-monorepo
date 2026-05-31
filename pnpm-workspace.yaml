@@ -1,0 +1,8 @@
+packages:
+  - 'apps/*' # 실행 가능한 애플리케이션
+  - 'packages/*' # 앱 간 공유 라이브러리
+allowBuilds:
+  '@prisma/engines': true # Prisma 엔진 빌드 허용
+  esbuild: true # esbuild 네이티브 바이너리 빌드 허용
+  prisma: true # Prisma 빌드 허용
+  sharp: false # sharp 빌드 허용 안 함 (예시)

@@ -1,0 +1,9 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "마이페이지" [level=1] [ref=e4]
+      - heading "주문 내역" [level=2] [ref=e5]
+      - generic [ref=e6]: 주문 내역이 없습니다.
+  - button "Open Next.js Dev Tools" [ref=e12] [cursor=pointer]:
+    - img [ref=e13]
+  - alert [ref=e16]

@@ -1,0 +1,366 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e19] [cursor=pointer]:
+    - img [ref=e20]
+  - alert [ref=e23]
+  - generic [ref=e24]:
+    - banner [ref=e25]:
+      - generic [ref=e26]:
+        - link "ShopApp" [ref=e27] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e28]:
+          - textbox "상품명 또는 브랜드 입력" [ref=e29]
+          - button "검색" [ref=e30]:
+            - img [ref=e31]
+        - navigation [ref=e34]:
+          - link "카테고리" [ref=e35] [cursor=pointer]:
+            - /url: /products
+            - img [ref=e36]
+            - generic [ref=e41]: 카테고리
+          - link "마이쇼핑" [ref=e42] [cursor=pointer]:
+            - /url: /mypage
+            - img [ref=e43]
+            - generic [ref=e46]: 마이쇼핑
+          - link "6 장바구니" [ref=e47] [cursor=pointer]:
+            - /url: /cart
+            - generic [ref=e48]:
+              - img [ref=e49]
+              - generic [ref=e53]: "6"
+            - generic [ref=e54]: 장바구니
+          - button "로그아웃" [ref=e56]
+      - navigation [ref=e57]:
+        - list [ref=e59]:
+          - listitem [ref=e60]:
+            - link "홈" [ref=e61] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e62]:
+            - link "전체상품" [ref=e63] [cursor=pointer]:
+              - /url: /products
+          - listitem [ref=e64]:
+            - link "패션의류" [ref=e65] [cursor=pointer]:
+              - /url: /categories/fashion
+          - listitem [ref=e66]:
+            - link "신발/가방" [ref=e67] [cursor=pointer]:
+              - /url: /categories/shoes-bags
+          - listitem [ref=e68]:
+            - link "액세서리" [ref=e69] [cursor=pointer]:
+              - /url: /categories/accessories
+          - listitem [ref=e70]:
+            - link "뷰티" [ref=e71] [cursor=pointer]:
+              - /url: /categories/beauty
+          - listitem [ref=e72]:
+            - link "스포츠" [ref=e73] [cursor=pointer]:
+              - /url: /categories/sports
+    - main [ref=e74]:
+      - generic [ref=e75]:
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - link "최대 80% 할인 오늘의 특가" [ref=e80] [cursor=pointer]:
+              - /url: /products
+              - paragraph [ref=e81]: 최대 80% 할인
+              - paragraph [ref=e82]: 오늘의 특가
+            - link "이번 주 새로운 트렌드 신상품 입고" [ref=e84] [cursor=pointer]:
+              - /url: /products
+              - paragraph [ref=e85]: 이번 주 새로운 트렌드
+              - paragraph [ref=e86]: 신상품 입고
+            - link "고객이 선택한 인기 상품 베스트 상품" [ref=e88] [cursor=pointer]:
+              - /url: /products
+              - paragraph [ref=e89]: 고객이 선택한 인기 상품
+              - paragraph [ref=e90]: 베스트 상품
+            - link "기간 한정 특별 할인 시즌 기획전" [ref=e92] [cursor=pointer]:
+              - /url: /products
+              - paragraph [ref=e93]: 기간 한정 특별 할인
+              - paragraph [ref=e94]: 시즌 기획전
+            - link "회원 전용 추가 10% 할인 멤버십 혜택" [ref=e96] [cursor=pointer]:
+              - /url: /login
+              - paragraph [ref=e97]: 회원 전용 추가 10% 할인
+              - paragraph [ref=e98]: 멤버십 혜택
+          - button "이전" [ref=e99]:
+            - img [ref=e100]
+          - button "다음" [ref=e102]:
+            - img [ref=e103]
+          - generic [ref=e105]:
+            - button "1번 슬라이드" [ref=e106]
+            - button "2번 슬라이드" [ref=e107]
+            - button "3번 슬라이드" [ref=e108]
+        - generic [ref=e111]:
+          - link "👗 패션의류" [ref=e112] [cursor=pointer]:
+            - /url: /categories/fashion
+            - generic [ref=e113]: 👗
+            - generic [ref=e114]: 패션의류
+          - link "👟 신발/가방" [ref=e115] [cursor=pointer]:
+            - /url: /categories/shoes-bags
+            - generic [ref=e116]: 👟
+            - generic [ref=e117]: 신발/가방
+          - link "💍 액세서리" [ref=e118] [cursor=pointer]:
+            - /url: /categories/accessories
+            - generic [ref=e119]: 💍
+            - generic [ref=e120]: 액세서리
+          - link "💄 뷰티" [ref=e121] [cursor=pointer]:
+            - /url: /categories/beauty
+            - generic [ref=e122]: 💄
+            - generic [ref=e123]: 뷰티
+          - link "⚽ 스포츠" [ref=e124] [cursor=pointer]:
+            - /url: /categories/sports
+            - generic [ref=e125]: ⚽
+            - generic [ref=e126]: 스포츠
+        - generic [ref=e128]:
+          - generic [ref=e130]:
+            - heading "개인 추천상품" [level=2] [ref=e131]
+            - paragraph [ref=e132]: 최근 본 상품
+          - link "오버핏 후드티 상의 오버핏 후드티 49,000원" [ref=e134] [cursor=pointer]:
+            - /url: /products/cmptdalx8000k089o4plgw97h
+            - img "오버핏 후드티" [ref=e136]
+            - generic [ref=e137]:
+              - paragraph [ref=e138]: 상의
+              - paragraph [ref=e139]: 오버핏 후드티
+              - paragraph [ref=e140]: 49,000원
+        - generic [ref=e142]:
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - heading "신상품" [level=2] [ref=e145]
+              - paragraph [ref=e146]: 새로 들어온 상품
+            - link "전체보기 →" [ref=e147] [cursor=pointer]:
+              - /url: /products?sort=new
+          - generic [ref=e148]:
+            - link "오버핏 후드티 상의 오버핏 후드티 49,000원 재고 60개" [ref=e149] [cursor=pointer]:
+              - /url: /products/cmptdalx8000k089o4plgw97h
+              - img "오버핏 후드티" [ref=e151]
+              - generic [ref=e152]:
+                - paragraph [ref=e153]: 상의
+                - paragraph [ref=e154]: 오버핏 후드티
+                - paragraph [ref=e155]: 49,000원
+                - paragraph [ref=e156]: 재고 60개
+            - link "울 가디건 상의 울 가디건 79,000원 재고 45개" [ref=e157] [cursor=pointer]:
+              - /url: /products/cmptdalx8000l089oghh46dho
+              - img "울 가디건" [ref=e159]
+              - generic [ref=e160]:
+                - paragraph [ref=e161]: 상의
+                - paragraph [ref=e162]: 울 가디건
+                - paragraph [ref=e163]: 79,000원
+                - paragraph [ref=e164]: 재고 45개
+            - link "플리스 집업 상의 플리스 집업 65,000원 재고 55개" [ref=e165] [cursor=pointer]:
+              - /url: /products/cmptdalx8000m089o86zcxngw
+              - img "플리스 집업" [ref=e167]
+              - generic [ref=e168]:
+                - paragraph [ref=e169]: 상의
+                - paragraph [ref=e170]: 플리스 집업
+                - paragraph [ref=e171]: 65,000원
+                - paragraph [ref=e172]: 재고 55개
+            - link "스트라이프 셔츠 상의 스트라이프 셔츠 45,000원 재고 70개" [ref=e173] [cursor=pointer]:
+              - /url: /products/cmptdalx8000n089orozpmxmj
+              - img "스트라이프 셔츠" [ref=e175]
+              - generic [ref=e176]:
+                - paragraph [ref=e177]: 상의
+                - paragraph [ref=e178]: 스트라이프 셔츠
+                - paragraph [ref=e179]: 45,000원
+                - paragraph [ref=e180]: 재고 70개
+            - link "린넨 반팔 셔츠 상의 린넨 반팔 셔츠 39,000원 재고 80개" [ref=e181] [cursor=pointer]:
+              - /url: /products/cmptdalx8000o089ofyq95396
+              - img "린넨 반팔 셔츠" [ref=e183]
+              - generic [ref=e184]:
+                - paragraph [ref=e185]: 상의
+                - paragraph [ref=e186]: 린넨 반팔 셔츠
+                - paragraph [ref=e187]: 39,000원
+                - paragraph [ref=e188]: 재고 80개
+            - link "터틀넥 니트 상의 터틀넥 니트 69,000원 재고 40개" [ref=e189] [cursor=pointer]:
+              - /url: /products/cmptdalx8000p089og2e8ozbp
+              - img "터틀넥 니트" [ref=e191]
+              - generic [ref=e192]:
+                - paragraph [ref=e193]: 상의
+                - paragraph [ref=e194]: 터틀넥 니트
+                - paragraph [ref=e195]: 69,000원
+                - paragraph [ref=e196]: 재고 40개
+            - link "맨투맨 스웨트셔츠 상의 맨투맨 스웨트셔츠 42,000원 재고 90개" [ref=e197] [cursor=pointer]:
+              - /url: /products/cmptdalx8000q089okncp36jj
+              - img "맨투맨 스웨트셔츠" [ref=e199]
+              - generic [ref=e200]:
+                - paragraph [ref=e201]: 상의
+                - paragraph [ref=e202]: 맨투맨 스웨트셔츠
+                - paragraph [ref=e203]: 42,000원
+                - paragraph [ref=e204]: 재고 90개
+            - link "클래식 화이트 티셔츠 상의 클래식 화이트 티셔츠 29,000원 재고 100개" [ref=e205] [cursor=pointer]:
+              - /url: /products/cmptdalx6000j089o6g22l9il
+              - img "클래식 화이트 티셔츠" [ref=e207]
+              - generic [ref=e208]:
+                - paragraph [ref=e209]: 상의
+                - paragraph [ref=e210]: 클래식 화이트 티셔츠
+                - paragraph [ref=e211]: 29,000원
+                - paragraph [ref=e212]: 재고 100개
+        - generic [ref=e214]:
+          - generic [ref=e215]:
+            - generic [ref=e216]:
+              - heading "베스트상품" [level=2] [ref=e217]
+              - paragraph [ref=e218]: 가장 많이 팔린 상품
+            - link "전체보기 →" [ref=e219] [cursor=pointer]:
+              - /url: /products?sort=best
+          - generic [ref=e220]:
+            - link "손목시계 주얼리 손목시계 125,000원 재고 25개" [ref=e221] [cursor=pointer]:
+              - /url: /products/cmptdalx8001h089o8doyo82l
+              - img "손목시계" [ref=e223]
+              - generic [ref=e224]:
+                - paragraph [ref=e225]: 주얼리
+                - paragraph [ref=e226]: 손목시계
+                - paragraph [ref=e227]: 125,000원
+                - paragraph [ref=e228]: 재고 25개
+            - link "숄더백 가방 숄더백 98,000원 재고 30개" [ref=e229] [cursor=pointer]:
+              - /url: /products/cmptdalx8001c089obvzxkheb
+              - img "숄더백" [ref=e231]
+              - generic [ref=e232]:
+                - paragraph [ref=e233]: 가방
+                - paragraph [ref=e234]: 숄더백
+                - paragraph [ref=e235]: 98,000원
+                - paragraph [ref=e236]: 재고 30개
+            - link "첼시 부츠 신발 첼시 부츠 115,000원 재고 30개" [ref=e237] [cursor=pointer]:
+              - /url: /products/cmptdalx80013089oim3cx8wb
+              - img "첼시 부츠" [ref=e239]
+              - generic [ref=e240]:
+                - paragraph [ref=e241]: 신발
+                - paragraph [ref=e242]: 첼시 부츠
+                - paragraph [ref=e243]: 115,000원
+                - paragraph [ref=e244]: 재고 30개
+            - link "클러치백 가방 클러치백 55,000원 재고 35개" [ref=e245] [cursor=pointer]:
+              - /url: /products/cmptdalx8001b089o69fhvjan
+              - img "클러치백" [ref=e247]
+              - generic [ref=e248]:
+                - paragraph [ref=e249]: 가방
+                - paragraph [ref=e250]: 클러치백
+                - paragraph [ref=e251]: 55,000원
+                - paragraph [ref=e252]: 재고 35개
+            - link "앵클 부츠 신발 앵클 부츠 95,000원 재고 35개" [ref=e253] [cursor=pointer]:
+              - /url: /products/cmptdalx80017089owt34o7vq
+              - img "앵클 부츠" [ref=e255]
+              - generic [ref=e256]:
+                - paragraph [ref=e257]: 신발
+                - paragraph [ref=e258]: 앵클 부츠
+                - paragraph [ref=e259]: 95,000원
+                - paragraph [ref=e260]: 재고 35개
+            - link "터틀넥 니트 상의 터틀넥 니트 69,000원 재고 40개" [ref=e261] [cursor=pointer]:
+              - /url: /products/cmptdalx8000p089og2e8ozbp
+              - img "터틀넥 니트" [ref=e263]
+              - generic [ref=e264]:
+                - paragraph [ref=e265]: 상의
+                - paragraph [ref=e266]: 터틀넥 니트
+                - paragraph [ref=e267]: 69,000원
+                - paragraph [ref=e268]: 재고 40개
+            - link "레더 미니백 가방 레더 미니백 89,000원 재고 40개" [ref=e269] [cursor=pointer]:
+              - /url: /products/cmptdalx80018089okapte1yv
+              - img "레더 미니백" [ref=e271]
+              - generic [ref=e272]:
+                - paragraph [ref=e273]: 가방
+                - paragraph [ref=e274]: 레더 미니백
+                - paragraph [ref=e275]: 89,000원
+                - paragraph [ref=e276]: 재고 40개
+            - link "로퍼 신발 로퍼 89,000원 재고 40개" [ref=e277] [cursor=pointer]:
+              - /url: /products/cmptdalx80012089o8kboakos
+              - img "로퍼" [ref=e279]
+              - generic [ref=e280]:
+                - paragraph [ref=e281]: 신발
+                - paragraph [ref=e282]: 로퍼
+                - paragraph [ref=e283]: 89,000원
+                - paragraph [ref=e284]: 재고 40개
+        - generic [ref=e286]:
+          - generic [ref=e287]:
+            - generic [ref=e288]:
+              - heading "전체상품" [level=2] [ref=e289]
+              - paragraph [ref=e290]: 스크롤하면 더 보입니다
+            - link "상품 페이지 →" [ref=e291] [cursor=pointer]:
+              - /url: /products
+          - generic [ref=e292]:
+            - link "오버핏 후드티 상의 오버핏 후드티 49,000원 재고 60개" [ref=e293] [cursor=pointer]:
+              - /url: /products/cmptdalx8000k089o4plgw97h
+              - img "오버핏 후드티" [ref=e295]
+              - generic [ref=e296]:
+                - paragraph [ref=e297]: 상의
+                - paragraph [ref=e298]: 오버핏 후드티
+                - paragraph [ref=e299]: 49,000원
+                - paragraph [ref=e300]: 재고 60개
+            - link "울 가디건 상의 울 가디건 79,000원 재고 45개" [ref=e301] [cursor=pointer]:
+              - /url: /products/cmptdalx8000l089oghh46dho
+              - img "울 가디건" [ref=e303]
+              - generic [ref=e304]:
+                - paragraph [ref=e305]: 상의
+                - paragraph [ref=e306]: 울 가디건
+                - paragraph [ref=e307]: 79,000원
+                - paragraph [ref=e308]: 재고 45개
+            - link "플리스 집업 상의 플리스 집업 65,000원 재고 55개" [ref=e309] [cursor=pointer]:
+              - /url: /products/cmptdalx8000m089o86zcxngw
+              - img "플리스 집업" [ref=e311]
+              - generic [ref=e312]:
+                - paragraph [ref=e313]: 상의
+                - paragraph [ref=e314]: 플리스 집업
+                - paragraph [ref=e315]: 65,000원
+                - paragraph [ref=e316]: 재고 55개
+            - link "스트라이프 셔츠 상의 스트라이프 셔츠 45,000원 재고 70개" [ref=e317] [cursor=pointer]:
+              - /url: /products/cmptdalx8000n089orozpmxmj
+              - img "스트라이프 셔츠" [ref=e319]
+              - generic [ref=e320]:
+                - paragraph [ref=e321]: 상의
+                - paragraph [ref=e322]: 스트라이프 셔츠
+                - paragraph [ref=e323]: 45,000원
+                - paragraph [ref=e324]: 재고 70개
+            - link "린넨 반팔 셔츠 상의 린넨 반팔 셔츠 39,000원 재고 80개" [ref=e325] [cursor=pointer]:
+              - /url: /products/cmptdalx8000o089ofyq95396
+              - img "린넨 반팔 셔츠" [ref=e327]
+              - generic [ref=e328]:
+                - paragraph [ref=e329]: 상의
+                - paragraph [ref=e330]: 린넨 반팔 셔츠
+                - paragraph [ref=e331]: 39,000원
+                - paragraph [ref=e332]: 재고 80개
+            - link "터틀넥 니트 상의 터틀넥 니트 69,000원 재고 40개" [ref=e333] [cursor=pointer]:
+              - /url: /products/cmptdalx8000p089og2e8ozbp
+              - img "터틀넥 니트" [ref=e335]
+              - generic [ref=e336]:
+                - paragraph [ref=e337]: 상의
+                - paragraph [ref=e338]: 터틀넥 니트
+                - paragraph [ref=e339]: 69,000원
+                - paragraph [ref=e340]: 재고 40개
+            - link "맨투맨 스웨트셔츠 상의 맨투맨 스웨트셔츠 42,000원 재고 90개" [ref=e341] [cursor=pointer]:
+              - /url: /products/cmptdalx8000q089okncp36jj
+              - img "맨투맨 스웨트셔츠" [ref=e343]
+              - generic [ref=e344]:
+                - paragraph [ref=e345]: 상의
+                - paragraph [ref=e346]: 맨투맨 스웨트셔츠
+                - paragraph [ref=e347]: 42,000원
+                - paragraph [ref=e348]: 재고 90개
+            - link "체크 플란넬 셔츠 상의 체크 플란넬 셔츠 52,000원 재고 50개" [ref=e349] [cursor=pointer]:
+              - /url: /products/cmptdalx8000r089o3yo3tmv3
+              - img "체크 플란넬 셔츠" [ref=e351]
+              - generic [ref=e352]:
+                - paragraph [ref=e353]: 상의
+                - paragraph [ref=e354]: 체크 플란넬 셔츠
+                - paragraph [ref=e355]: 52,000원
+                - paragraph [ref=e356]: 재고 50개
+            - link "크롭 탱크탑 상의 크롭 탱크탑 19,000원 재고 120개" [ref=e357] [cursor=pointer]:
+              - /url: /products/cmptdalx8000s089o1t0kpwq5
+              - img "크롭 탱크탑" [ref=e359]
+              - generic [ref=e360]:
+                - paragraph [ref=e361]: 상의
+                - paragraph [ref=e362]: 크롭 탱크탑
+                - paragraph [ref=e363]: 19,000원
+                - paragraph [ref=e364]: 재고 120개
+            - link "슬림핏 청바지 하의 슬림핏 청바지 59,000원 재고 80개" [ref=e365] [cursor=pointer]:
+              - /url: /products/cmptdalx8000t089op0iix0qn
+              - img "슬림핏 청바지" [ref=e367]
+              - generic [ref=e368]:
+                - paragraph [ref=e369]: 하의
+                - paragraph [ref=e370]: 슬림핏 청바지
+                - paragraph [ref=e371]: 59,000원
+                - paragraph [ref=e372]: 재고 80개
+            - link "린넨 와이드 팬츠 하의 린넨 와이드 팬츠 55,000원 재고 70개" [ref=e373] [cursor=pointer]:
+              - /url: /products/cmptdalx8000u089o8fgb9h2h
+              - img "린넨 와이드 팬츠" [ref=e375]
+              - generic [ref=e376]:
+                - paragraph [ref=e377]: 하의
+                - paragraph [ref=e378]: 린넨 와이드 팬츠
+                - paragraph [ref=e379]: 55,000원
+                - paragraph [ref=e380]: 재고 70개
+            - link "카고 팬츠 하의 카고 팬츠 62,000원 재고 60개" [ref=e381] [cursor=pointer]:
+              - /url: /products/cmptdalx8000v089oln7hmaqj
+              - img "카고 팬츠" [ref=e383]
+              - generic [ref=e384]:
+                - paragraph [ref=e385]: 하의
+                - paragraph [ref=e386]: 카고 팬츠
+                - paragraph [ref=e387]: 62,000원
+                - paragraph [ref=e388]: 재고 60개
+    - contentinfo [ref=e390]:
+      - paragraph [ref=e392]: © 2026 ShopApp

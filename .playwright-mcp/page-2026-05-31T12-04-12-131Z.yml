@@ -1,0 +1,174 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "ShopApp" [ref=e5] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e6]:
+          - textbox "상품명 또는 브랜드 입력" [ref=e7]
+          - button "검색" [ref=e8]:
+            - img [ref=e9]
+        - navigation [ref=e12]:
+          - link "카테고리" [ref=e13] [cursor=pointer]:
+            - /url: /products
+            - img [ref=e14]
+            - generic [ref=e19]: 카테고리
+          - link "마이쇼핑" [ref=e20] [cursor=pointer]:
+            - /url: /mypage
+            - img [ref=e21]
+            - generic [ref=e24]: 마이쇼핑
+          - link "장바구니" [ref=e25] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e27]
+            - generic [ref=e31]: 장바구니
+          - button "로그아웃" [ref=e33]
+      - navigation [ref=e34]:
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - link "홈" [ref=e38] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e39]:
+            - link "전체상품" [ref=e40] [cursor=pointer]:
+              - /url: /products
+          - listitem [ref=e41]:
+            - link "패션의류" [ref=e42] [cursor=pointer]:
+              - /url: /categories/fashion
+          - listitem [ref=e43]:
+            - link "신발/가방" [ref=e44] [cursor=pointer]:
+              - /url: /categories/shoes-bags
+          - listitem [ref=e45]:
+            - link "액세서리" [ref=e46] [cursor=pointer]:
+              - /url: /categories/accessories
+          - listitem [ref=e47]:
+            - link "뷰티" [ref=e48] [cursor=pointer]:
+              - /url: /categories/beauty
+          - listitem [ref=e49]:
+            - link "스포츠" [ref=e50] [cursor=pointer]:
+              - /url: /categories/sports
+    - main [ref=e51]:
+      - generic [ref=e52]:
+        - heading "전체 상품" [level=1] [ref=e54]
+        - generic [ref=e55]:
+          - button "전체" [ref=e56]
+          - button "👗패션의류" [ref=e57]
+          - button "👟신발/가방" [ref=e58]
+          - button "💍액세서리" [ref=e59]
+          - button "💄뷰티" [ref=e60]
+          - button "⚽스포츠" [ref=e61]
+        - generic [ref=e62]:
+          - link "오버핏 후드티 상의 오버핏 후드티 49,000원 재고 60개" [ref=e123] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000kic9orrj1g58y
+            - img "오버핏 후드티" [ref=e125]
+            - generic [ref=e126]:
+              - paragraph [ref=e127]: 상의
+              - paragraph [ref=e128]: 오버핏 후드티
+              - paragraph [ref=e129]: 49,000원
+              - paragraph [ref=e130]: 재고 60개
+          - link "울 가디건 상의 울 가디건 79,000원 재고 45개" [ref=e131] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000lic9ow1817xi2
+            - img "울 가디건" [ref=e133]
+            - generic [ref=e134]:
+              - paragraph [ref=e135]: 상의
+              - paragraph [ref=e136]: 울 가디건
+              - paragraph [ref=e137]: 79,000원
+              - paragraph [ref=e138]: 재고 45개
+          - link "플리스 집업 상의 플리스 집업 65,000원 재고 55개" [ref=e139] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000mic9oz6x777hr
+            - img "플리스 집업" [ref=e141]
+            - generic [ref=e142]:
+              - paragraph [ref=e143]: 상의
+              - paragraph [ref=e144]: 플리스 집업
+              - paragraph [ref=e145]: 65,000원
+              - paragraph [ref=e146]: 재고 55개
+          - link "스트라이프 셔츠 상의 스트라이프 셔츠 45,000원 재고 70개" [ref=e147] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000nic9oq4adqof3
+            - img "스트라이프 셔츠" [ref=e149]
+            - generic [ref=e150]:
+              - paragraph [ref=e151]: 상의
+              - paragraph [ref=e152]: 스트라이프 셔츠
+              - paragraph [ref=e153]: 45,000원
+              - paragraph [ref=e154]: 재고 70개
+          - link "린넨 반팔 셔츠 상의 린넨 반팔 셔츠 39,000원 재고 80개" [ref=e155] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000oic9oche26qf8
+            - img "린넨 반팔 셔츠" [ref=e157]
+            - generic [ref=e158]:
+              - paragraph [ref=e159]: 상의
+              - paragraph [ref=e160]: 린넨 반팔 셔츠
+              - paragraph [ref=e161]: 39,000원
+              - paragraph [ref=e162]: 재고 80개
+          - link "터틀넥 니트 상의 터틀넥 니트 69,000원 재고 40개" [ref=e163] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000pic9odns5p6o4
+            - img "터틀넥 니트" [ref=e165]
+            - generic [ref=e166]:
+              - paragraph [ref=e167]: 상의
+              - paragraph [ref=e168]: 터틀넥 니트
+              - paragraph [ref=e169]: 69,000원
+              - paragraph [ref=e170]: 재고 40개
+          - link "맨투맨 스웨트셔츠 상의 맨투맨 스웨트셔츠 42,000원 재고 90개" [ref=e171] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000qic9oix27arng
+            - img "맨투맨 스웨트셔츠" [ref=e173]
+            - generic [ref=e174]:
+              - paragraph [ref=e175]: 상의
+              - paragraph [ref=e176]: 맨투맨 스웨트셔츠
+              - paragraph [ref=e177]: 42,000원
+              - paragraph [ref=e178]: 재고 90개
+          - link "체크 플란넬 셔츠 상의 체크 플란넬 셔츠 52,000원 재고 50개" [ref=e179] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000ric9ov0ooh2o4
+            - img "체크 플란넬 셔츠" [ref=e181]
+            - generic [ref=e182]:
+              - paragraph [ref=e183]: 상의
+              - paragraph [ref=e184]: 체크 플란넬 셔츠
+              - paragraph [ref=e185]: 52,000원
+              - paragraph [ref=e186]: 재고 50개
+          - link "크롭 탱크탑 상의 크롭 탱크탑 19,000원 재고 120개" [ref=e187] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000sic9owep818lp
+            - img "크롭 탱크탑" [ref=e189]
+            - generic [ref=e190]:
+              - paragraph [ref=e191]: 상의
+              - paragraph [ref=e192]: 크롭 탱크탑
+              - paragraph [ref=e193]: 19,000원
+              - paragraph [ref=e194]: 재고 120개
+          - link "슬림핏 청바지 하의 슬림핏 청바지 59,000원 재고 80개" [ref=e195] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000tic9oyfjvx9id
+            - img "슬림핏 청바지" [ref=e197]
+            - generic [ref=e198]:
+              - paragraph [ref=e199]: 하의
+              - paragraph [ref=e200]: 슬림핏 청바지
+              - paragraph [ref=e201]: 59,000원
+              - paragraph [ref=e202]: 재고 80개
+          - link "린넨 와이드 팬츠 하의 린넨 와이드 팬츠 55,000원 재고 70개" [ref=e203] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000uic9o9o5vx2po
+            - img "린넨 와이드 팬츠" [ref=e205]
+            - generic [ref=e206]:
+              - paragraph [ref=e207]: 하의
+              - paragraph [ref=e208]: 린넨 와이드 팬츠
+              - paragraph [ref=e209]: 55,000원
+              - paragraph [ref=e210]: 재고 70개
+          - link "카고 팬츠 하의 카고 팬츠 62,000원 재고 60개" [ref=e211] [cursor=pointer]:
+            - /url: /products/cmptpxfd1000vic9o7ltfdzp9
+            - img "카고 팬츠" [ref=e213]
+            - generic [ref=e214]:
+              - paragraph [ref=e215]: 하의
+              - paragraph [ref=e216]: 카고 팬츠
+              - paragraph [ref=e217]: 62,000원
+              - paragraph [ref=e218]: 재고 60개
+    - contentinfo [ref=e111]:
+      - paragraph [ref=e113]: © 2026 ShopApp
+  - generic [active]:
+    - menu "Next.js Dev Tools Items" [ref=e220]:
+      - generic [ref=e221]:
+        - menuitem "Route Dynamic" [ref=e222] [cursor=pointer]:
+          - generic [ref=e223]: Route
+          - generic [ref=e224]: Dynamic
+        - generic "Turbopack is enabled." [ref=e225]:
+          - generic [ref=e226]: Bundler
+          - generic [ref=e227]: Turbopack
+        - menuitem "Route Info" [ref=e228]:
+          - generic [ref=e229]: Route Info
+          - img [ref=e231]
+      - menuitem "Preferences" [ref=e234]:
+        - generic [ref=e235]: Preferences
+        - img [ref=e237]
+    - button "Close Next.js Dev Tools" [expanded] [ref=e239] [cursor=pointer]:
+      - img [ref=e120]
+  - alert [ref=e240]

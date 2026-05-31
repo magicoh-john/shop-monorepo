@@ -1,0 +1,5 @@
+.bgPurple { background: linear-gradient(135deg, #6B21A8, #9333EA); }
+.bgGreen  { background: linear-gradient(135deg, #166534, #16A34A); }
+.bgRed    { background: linear-gradient(135deg, #B91C1C, #EF4444); }
+.bgBlue   { background: linear-gradient(135deg, #1D4ED8, #3B82F6); }
+.bgDark   { background: linear-gradient(135deg, #1F2937, #374151); }
