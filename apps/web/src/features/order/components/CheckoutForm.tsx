@@ -18,7 +18,8 @@ export default function CheckoutForm() {
 
   const onSubmit = async (data: OrderFormData) => {
     try {
-      await createOrder(data, items);
+      const orderItems = items.map(({ productId, quantity }) => ({ productId, quantity }));
+      await createOrder(data, orderItems);
       clearCart();
       router.push('/mypage');
     } catch {

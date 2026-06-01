@@ -1,60 +1,21 @@
-# 스펙 11 — 보안 취약점 수정 (Middleware 활성화 & 가격 서버 검증)
+# 스펙 11 — 보안 취약점 수정 (주문 가격 서버 검증)
 
 ## 목표
 
-실무 보안 아키텍처(Middleware → Server Action → Prisma)의 두 가지 핵심 취약점을 수정한다.
-
-1. **Middleware 비활성화** — `proxy.ts`가 잘못된 파일명으로 미들웨어가 전혀 동작하지 않는 상태
-2. **주문 가격 클라이언트 신뢰** — `createOrder`가 클라이언트(Zustand)에서 전달한 가격을 그대로 DB에 저장
+`createOrder` Server Action이 클라이언트(Zustand)에서 전달한 가격을 그대로 DB에 저장하는
+취약점을 수정한다. 서버에서 DB 가격을 직접 조회하여 가격 조작을 차단한다.
 
 ---
 
 ## 완료 기준
 
-- 비로그인 사용자가 `/mypage`, `/checkout`, `/order`에 접근하면 `/login`으로 리다이렉트된다
-- 비관리자가 `/admin`에 접근하면 `/`로 리다이렉트된다
 - 주문 생성 시 상품 가격이 DB에서 조회된 값으로 저장된다
 - 클라이언트가 `price`를 변조해 전송해도 DB에 저장된 실제 가격으로 처리된다
+- 존재하지 않는 `productId`로 주문 시도 시 에러가 반환된다
 
 ---
 
-## 취약점 1 — Middleware 비활성화
-
-### 문제
-
-```
-apps/web/src/proxy.ts   ← ❌ Next.js가 인식하지 못하는 파일명
-```
-
-Next.js는 `src/middleware.ts` (또는 루트의 `middleware.ts`)만 미들웨어로 인식한다.
-현재 `proxy.ts`는 올바른 미들웨어 코드를 담고 있지만 **전혀 실행되지 않는다.**
-
-결과적으로 라우트 보호가 `AdminLayout` 서버 컴포넌트에만 의존하며,
-미들웨어 계층의 선제적 차단이 없는 상태다.
-
-### 보안 계층 비교
-
-```
-현재 (취약)               수정 후 (권장)
-────────────────          ────────────────────────
-Browser                   Browser
-   ↓                         ↓
-[미들웨어 없음] ← 공백      Middleware (proxy.ts 기반)
-   ↓                         ├─ 로그인 여부 확인
-AdminLayout                  └─ 관리자 role 확인
-   └─ auth() 재검증              ↓
-                            AdminLayout / Layout
-                               └─ auth() 재검증 (이중 방어)
-```
-
-### 수정 방법
-
-`proxy.ts`를 삭제하고 `middleware.ts`로 새로 생성한다.
-내용은 동일하다 — 파일명만 바꾸는 것이 핵심이다.
-
----
-
-## 취약점 2 — 주문 가격 클라이언트 신뢰
+## 취약점 — 주문 가격 클라이언트 신뢰
 
 ### 문제
 
@@ -76,8 +37,7 @@ await prisma.order.create({
 });
 ```
 
-브라우저 개발자 도구로 네트워크 요청을 수정하거나
-Server Action 호출을 직접 조작하면 `price: 1`로 주문을 완료할 수 있다.
+브라우저 개발자 도구로 Server Action 호출을 직접 조작하면 `price: 1`로 주문을 완료할 수 있다.
 
 ### 수정 방법
 
@@ -103,8 +63,6 @@ price     (제거)          DB 가격 × quantity = 실제 금액
 
 | 파일 | 작업 |
 |---|---|
-| `src/proxy.ts` | 삭제 |
-| `src/middleware.ts` | 생성 — proxy.ts와 동일한 내용 |
 | `src/features/order/order.actions.ts` | 수정 — `createOrder` 가격 서버 검증 |
 | `src/features/order/components/CheckoutForm.tsx` | 수정 — `items`에서 `price` 제거 |
 
@@ -112,28 +70,7 @@ price     (제거)          DB 가격 × quantity = 실제 금액
 
 ## 구현 순서
 
-### 1. `src/middleware.ts` 생성
-
-```ts
-// src/middleware.ts
-import NextAuth from "next-auth";
-import { authConfig } from "@/auth.config";
-
-export default NextAuth(authConfig).auth;
-
-export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
-};
-```
-
-`src/proxy.ts`는 삭제한다.
-
-> **왜 내용이 같은가**: `authConfig.callbacks.authorized`에 라우트 보호 로직이 이미 구현되어 있다.
-> 파일명을 `middleware.ts`로 바꾸는 것만으로 Next.js가 Edge Runtime에서 이를 자동 실행한다.
-
----
-
-### 2. `createOrder` 수정 — 가격 서버 검증
+### 1. `createOrder` 수정 — 가격 서버 검증
 
 **인터페이스 변경**: 클라이언트에서 `price`를 받지 않는다.
 
@@ -214,7 +151,7 @@ export async function createOrder(formData: OrderFormData, items: OrderItemInput
 
 ---
 
-### 3. `CheckoutForm.tsx` 수정 — `price` 제거
+### 2. `CheckoutForm.tsx` 수정 — `price` 제거
 
 `createOrder` 호출 시 `items`에서 `price`를 제거한다.
 
@@ -232,10 +169,5 @@ await createOrder(data, orderItems);
 
 ## 검증 방법
 
-### Middleware 검증
-1. 로그아웃 상태에서 `/mypage` 직접 접근 → `/login` 리다이렉트 확인
-2. 일반 사용자로 로그인 후 `/admin` 접근 → `/` 리다이렉트 확인
-
-### 가격 검증
 1. 브라우저 개발자 도구에서 Server Action 페이로드의 `price` 값을 `1`로 변조 후 주문
 2. 마이페이지에서 실제 상품 가격으로 주문이 저장되었는지 확인
