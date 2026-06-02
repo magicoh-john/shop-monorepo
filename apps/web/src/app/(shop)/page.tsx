@@ -81,53 +81,62 @@ export default async function HomePage() {
 
       {/* 신상품 */}
       <section className="max-w-5xl mx-auto px-6 pb-6">
-        <div className="bg-card rounded-[var(--radius)] border border-border p-6">
-          <div className="flex items-center justify-between mb-5">
-            <div>
-              <h2 className="text-lg font-bold text-foreground">신상품</h2>
-              <p className="text-xs text-muted-foreground mt-0.5">새로 들어온 상품</p>
+        <div className="bg-card rounded-[var(--radius)] border border-border overflow-hidden">
+          <div className="h-1 bg-gradient-to-r from-primary to-blue-400" />
+          <div className="p-6">
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <h2 className="text-lg font-bold text-foreground">신상품</h2>
+                <p className="text-xs text-muted-foreground mt-0.5">새로 들어온 상품</p>
+              </div>
+              <Link href="/products?sort=new" className="text-sm text-primary hover:opacity-80 font-medium">
+                전체보기 →
+              </Link>
             </div>
-            <Link href="/products?sort=new" className="text-sm text-primary hover:opacity-80 font-medium">
-              전체보기 →
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {newProducts.map((p) => <ProductCard key={p.id} product={p as any} />)}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {newProducts.map((p) => <ProductCard key={p.id} product={p as any} />)}
+            </div>
           </div>
         </div>
       </section>
 
       {/* 베스트상품 */}
       <section className="max-w-5xl mx-auto px-6 pb-6">
-        <div className="bg-card rounded-[var(--radius)] border border-border p-6">
-          <div className="flex items-center justify-between mb-5">
-            <div>
-              <h2 className="text-lg font-bold text-foreground">베스트상품</h2>
-              <p className="text-xs text-muted-foreground mt-0.5">가장 많이 팔린 상품</p>
+        <div className="bg-card rounded-[var(--radius)] border border-border overflow-hidden">
+          <div className="h-1 bg-gradient-to-r from-destructive to-orange-400" />
+          <div className="p-6">
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <h2 className="text-lg font-bold text-foreground">베스트상품</h2>
+                <p className="text-xs text-muted-foreground mt-0.5">가장 많이 팔린 상품</p>
+              </div>
+              <Link href="/products?sort=best" className="text-sm text-primary hover:opacity-80 font-medium">
+                전체보기 →
+              </Link>
             </div>
-            <Link href="/products?sort=best" className="text-sm text-primary hover:opacity-80 font-medium">
-              전체보기 →
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {bestProducts.map((p) => <ProductCard key={p.id} product={p as any} />)}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {bestProducts.map((p) => <ProductCard key={p.id} product={p as any} />)}
+            </div>
           </div>
         </div>
       </section>
 
       {/* 전체상품 — 무한 스크롤 */}
       <section className="max-w-5xl mx-auto px-6 pb-10">
-        <div className="bg-card rounded-[var(--radius)] border border-border p-6">
-          <div className="flex items-center justify-between mb-5">
-            <div>
-              <h2 className="text-lg font-bold text-foreground">전체상품</h2>
-              <p className="text-xs text-muted-foreground mt-0.5">스크롤하면 더 보입니다</p>
+        <div className="bg-card rounded-[var(--radius)] border border-border overflow-hidden">
+          <div className="h-1 bg-gradient-to-r from-muted-foreground to-slate-400" />
+          <div className="p-6">
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <h2 className="text-lg font-bold text-foreground">전체상품</h2>
+                <p className="text-xs text-muted-foreground mt-0.5">스크롤하면 더 보입니다</p>
+              </div>
+              <Link href="/products" className="text-sm text-primary hover:opacity-80 font-medium">
+                상품 페이지 →
+              </Link>
             </div>
-            <Link href="/products" className="text-sm text-primary hover:opacity-80 font-medium">
-              상품 페이지 →
-            </Link>
+            <ProductGrid />
           </div>
-          <ProductGrid />
         </div>
       </section>
 

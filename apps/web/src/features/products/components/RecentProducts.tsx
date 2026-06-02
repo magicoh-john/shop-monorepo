@@ -11,7 +11,9 @@ export default function RecentProducts() {
 
   return (
     <section className="max-w-5xl mx-auto px-6 pb-6">
-      <div className="bg-card rounded-[var(--radius)] border border-border p-6">
+      <div className="bg-card rounded-[var(--radius)] border border-border overflow-hidden">
+        <div className="h-1 bg-gradient-to-r from-amber-400 to-yellow-300" />
+        <div className="p-6">
         <div className="flex items-center justify-between mb-5">
           <div>
             <h2 className="text-lg font-bold text-primary">개인 추천상품</h2>
@@ -37,6 +39,7 @@ export default function RecentProducts() {
               </div>
             </Link>
           ))}
+        </div>
         </div>
       </div>
     </section>
