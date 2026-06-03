@@ -729,7 +729,28 @@ export default async function AdminChatPage({
 
 ---
 
-### 10단계 — 다중 서버 시연 테스트
+### 10단계 — WebSocket 서버 시작 로그 추가
+
+서버가 정상 실행됐는지 터미널에서 바로 확인할 수 있도록 `server.ts`에 로그를 추가한다.
+
+```ts
+server.listen(process.env.PORT ?? 3000, () => {
+  console.log(`✅ 서버 실행 중: http://localhost:${process.env.PORT ?? 3000}`);
+  console.log(`🔌 WebSocket 서버 실행 중: ws://localhost:${process.env.PORT ?? 3000}/ws`);
+});
+```
+
+`pnpm dev` 실행 후 아래처럼 출력되면 정상이다.
+
+```
+✅ Redis 연결 성공 (localhost:6379)
+✅ 서버 실행 중: http://localhost:3000
+🔌 WebSocket 서버 실행 중: ws://localhost:3000/ws
+```
+
+---
+
+### 11단계 — 다중 서버 시연 테스트
 
 단일 PC에서 포트를 다르게 해 서버 2개를 띄워 Pub/Sub 효과를 확인한다.
 
