@@ -13,6 +13,27 @@
 | `apps/web/src/features/chat/components/AdminChatWindow.tsx` | 상담원 채팅 UI (클라이언트 컴포넌트) |
 | `packages/database/prisma/schema.prisma` | ChatRoom, ChatMessage 모델 정의 |
 
+```
+shop-monorepo/
+├── apps/web/
+│   ├── server.ts                              ← Custom Server 진입점
+│   └── src/
+│       ├── lib/
+│       │   ├── redisPubSub.ts                 ← Pub/Sub 전용 Redis 클라이언트
+│       │   └── websocket.ts                   ← WebSocket 연결 관리 + Redis 중계
+│       ├── app/
+│       │   ├── (shop)/chat/
+│       │   │   └── page.tsx                   ← 사용자 채팅 페이지 (서버 컴포넌트)
+│       │   └── admin/chat/
+│       │       └── page.tsx                   ← 상담원 채팅 페이지 (서버 컴포넌트)
+│       └── features/chat/components/
+│           ├── ChatWindow.tsx                 ← 사용자 채팅 UI (클라이언트 컴포넌트)
+│           └── AdminChatWindow.tsx            ← 상담원 채팅 UI (클라이언트 컴포넌트)
+└── packages/database/
+    └── prisma/
+        └── schema.prisma                      ← ChatRoom, ChatMessage 모델
+```
+
 ---
 
 ## 파일 간 관계
