@@ -34,7 +34,11 @@ AI는 아래 명시된 기술 스택의 **정확한 버전**만을 사용하여 
 
 이 프로젝트의 Next.js(`16.2.6`)는 일반 버전과 다른 규칙을 따른다.
 **AI는 학습 데이터 기반의 Next.js 표준을 이 프로젝트에 그대로 적용하면 안 된다.**
-Next.js 관련 코드 작성 전 반드시 `docs/nextjs16.md` 를 먼저 확인한다.
+코드 작성 전 반드시 `node_modules/next/dist/docs/`를 먼저 확인한다.
+
+| 항목 | 일반 Next.js (AI 학습 기준) | 이 프로젝트 (실제 표준) |
+|---|---|---|
+| 미들웨어 파일명 | `middleware.ts` | `proxy.ts` ✅ |
 
 > **재발 방지 원칙**: "표준과 다르다"고 판단되는 파일/패턴을 발견했을 때,
 > 임의로 수정하기 전에 반드시 사용자에게 먼저 확인한다.
@@ -60,7 +64,31 @@ imageUrl   String? @map("image_url")
 
 ## 폴더 구조 (apps/web/src/)
 
-→ `docs/ARCHITECTURE.md` 섹션 3 참고
+```
+src/
+├── app/                        ← Next.js 라우트 (페이지, API)
+├── components/
+│   ├── ui/                     ← Shadcn 프리미티브 전용 (shadcn add로 자동 생성)
+│   └── layout/                 ← Header, Footer 등 전체 공통 레이아웃
+├── features/
+│   ├── auth/
+│   │   ├── components/         ← 인증 전용 UI 컴포넌트
+│   │   └── auth.actions.ts     ← 인증 Server Actions
+│   ├── products/
+│   │   ├── components/         ← 상품 전용 UI 컴포넌트
+│   │   └── products.actions.ts
+│   ├── order/
+│   │   ├── components/         ← 주문 전용 UI 컴포넌트
+│   │   └── order.actions.ts
+│   └── admin/
+│       ├── components/         ← 관리자 전용 UI 컴포넌트
+│       └── admin.actions.ts
+├── hooks/                      ← 공통 커스텀 훅
+├── lib/
+│   └── utils.ts                ← cn() 등 유틸리티
+├── schemas/                    ← Zod 유효성 검사 스키마
+└── types/                      ← TypeScript 타입 선언
+```
 
 > **규칙**: `components/ui/`는 Shadcn 전용. 커스텀 컴포넌트는 반드시 `features/<domain>/components/` 또는 `components/layout/`에 작성한다.
 
@@ -130,22 +158,6 @@ pnpm --filter @my-project/database exec npx prisma studio
 pnpm --filter @my-project/database exec npx prisma migrate status
 ```
 
-### Git
-
-> **⚠️ 모노레포 규칙**: git 명령은 반드시 **루트(`shop-monorepo/`)** 에서 실행한다.
-> 하위 워크스페이스(`apps/web/`, `packages/database/` 등)에서 실행하면
-> 모노레포 전체가 아닌 해당 폴더 기준으로 동작해 다른 패키지 변경사항이 누락될 수 있다.
-
-```bash
-# 올바른 위치 (루트)
-git add .
-git commit -m "feat: ..."
-git push
-
-# 잘못된 위치 (하위 워크스페이스)
-cd apps/web && git add .   # ❌
-```
-
 ### 워크스페이스 이름 참조
 
 | 경로 | `--filter` 값 |
@@ -171,8 +183,7 @@ cd apps/web && git add .   # ❌
 
 ```
 1. 브랜치 준비
-   main pull → feature/<기능-내용> 브랜치 생성
-   (예: feature/common-layout, feature/product-list, feature/cart-zustand)
+   main pull → feature/<스펙명> 브랜치 생성
 
 2. 사전 조건 확인
    스펙 파일에 명시된 전제 조건 점검

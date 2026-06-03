@@ -17,7 +17,8 @@ export default async function MyPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-10">
-      <h1 className="text-2xl font-bold text-foreground mb-8">마이페이지</h1>
+      <h1 className="text-2xl font-bold text-foreground mb-2">마이페이지</h1>
+      <p className="text-muted-foreground mb-8">{session.user.name} 님</p>
 
       <h2 className="text-lg font-semibold text-foreground mb-4">주문 내역</h2>
       {orders.length === 0 ? (

@@ -1,19 +1,24 @@
 'use client';
 
-import { useCartStore } from '@/store/cartStore';
+import { useRouter } from 'next/navigation';
 import type { Product } from '@my-project/types';
 
 export default function AddToCartButton({ product }: { product: Product }) {
-  const addItem = useCartStore((state) => state.addItem);
+  const router = useRouter();
 
-  const handleAdd = () => {
-    addItem({
-      productId: product.id,
-      productName: product.name,
-      price: product.price,
-      quantity: 1,
-      imageUrl: product.imageUrl ?? undefined,
+  const handleAdd = async () => {
+    await fetch('/api/cart', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        productId: product.id,
+        productName: product.name,
+        price: product.price,
+        quantity: 1,
+        imageUrl: product.imageUrl ?? undefined,
+      }),
     });
+    router.refresh();
     alert('장바구니에 추가되었습니다.');
   };
 
