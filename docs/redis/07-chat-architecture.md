@@ -75,6 +75,22 @@ chat/page.tsx (서버)         admin/chat/page.tsx (서버)
 
 3. server.ts가 WebSocket 업그레이드 요청을 받아 websocket.ts로 전달
 
+   > **업그레이드(Upgrade)란?**
+   > 브라우저는 WebSocket 연결을 시작할 때 먼저 HTTP 요청을 보내며 헤더에 `Upgrade: websocket`을 포함시킨다.
+   > 서버가 이를 수락하면 HTTP에서 WebSocket 프로토콜로 전환된다.
+   >
+   > ```
+   > 브라우저 → 서버: HTTP 요청
+   >   Upgrade: websocket
+   >   Connection: Upgrade
+   >
+   > 서버 → 브라우저: HTTP 101 Switching Protocols
+   >   ← 이후부터 ws:// 프로토콜로 양방향 통신 시작
+   > ```
+   >
+   > HTTP는 요청-응답이 끝나면 연결이 닫히지만, WebSocket은 한 번 연결되면 서버와 클라이언트가 연결을 유지하며 계속 양방향으로 통신할 수 있다.
+   > `server.ts`의 `server.on('upgrade', ...)` 이벤트가 이 전환 시점을 잡아 처리한다.
+
 4. websocket.ts의 ws.on('message') 이벤트 실행
    ├── 4-1. DB에 저장: prisma.chatMessage.create(...)
    └── 4-2. Redis에 발행: publisher.publish('chat:{roomId}', 메시지)
