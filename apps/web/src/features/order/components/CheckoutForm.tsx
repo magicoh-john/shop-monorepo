@@ -1,16 +1,23 @@
 'use client';
 
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { orderSchema, type OrderFormData } from '@/schemas/order.schema';
-import { useCartStore } from '@/store/cartStore';
 import { createOrder } from '@/features/order/order.actions';
+import type { CartItem } from '@/lib/cart';
 
-export default function CheckoutForm() {
+interface Props {
+  initialItems: CartItem[];
+}
+
+export default function CheckoutForm({ initialItems }: Props) {
   const router = useRouter();
-  const { items, totalPrice, clearCart } = useCartStore();
+  const [items] = useState(initialItems);
+
+  const totalPrice = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<OrderFormData>({
     resolver: zodResolver(orderSchema),
@@ -20,7 +27,7 @@ export default function CheckoutForm() {
     try {
       const orderItems = items.map(({ productId, quantity }) => ({ productId, quantity }));
       await createOrder(data, orderItems);
-      clearCart();
+      await fetch('/api/cart?clear=true', { method: 'DELETE' });
       router.push('/mypage');
     } catch {
       alert('주문 중 오류가 발생했습니다. 다시 시도해주세요.');
@@ -44,7 +51,6 @@ export default function CheckoutForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-      {/* 주문 상품 목록 */}
       <div>
         <h2 className="text-lg font-semibold text-foreground mb-4">주문 상품</h2>
         <div className="space-y-3">
@@ -74,11 +80,10 @@ export default function CheckoutForm() {
         </div>
         <div className="mt-4 bg-card border border-border rounded-[var(--radius)] p-4 flex justify-between items-center">
           <span className="font-semibold text-foreground">총 결제 금액</span>
-          <span className="text-xl font-bold text-primary">{totalPrice().toLocaleString()}원</span>
+          <span className="text-xl font-bold text-primary">{totalPrice.toLocaleString()}원</span>
         </div>
       </div>
 
-      {/* 배송지 입력 */}
       <div>
         <h2 className="text-lg font-semibold text-foreground mb-4">배송지 정보</h2>
         <div className="space-y-4">
@@ -120,7 +125,7 @@ export default function CheckoutForm() {
           disabled={isSubmitting}
           className="mt-8 w-full bg-primary text-primary-foreground py-3 rounded-[calc(var(--radius)-2px)] font-semibold hover:opacity-90 transition-opacity disabled:opacity-50"
         >
-          {isSubmitting ? '처리 중...' : `${totalPrice().toLocaleString()}원 결제 완료`}
+          {isSubmitting ? '처리 중...' : `${totalPrice.toLocaleString()}원 결제 완료`}
         </button>
       </div>
     </form>

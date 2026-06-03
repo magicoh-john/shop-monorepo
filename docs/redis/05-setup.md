@@ -118,6 +118,57 @@ Redis가 실행 중이지 않으면:
 
 ---
 
+## 9. 장바구니 Redis 저장 테스트
+
+> **반드시 비로그인 상태**에서 테스트합니다.  
+> 로그인 상태에서는 `cart:user:{userId}` 키를 사용하므로 세션 ID 기반 비로그인 흐름을 확인할 수 없습니다.
+
+### 테스트 순서
+
+1. 브라우저에서 로그아웃 확인
+2. 상품 페이지에서 **장바구니 담기** 클릭
+3. 아래 두 가지 방법 중 하나로 Redis 저장 확인
+
+---
+
+### 방법 A — redis-cli로 직접 확인
+
+```powershell
+docker exec -it redis redis-cli
+> KEYS *
+```
+
+`cart:session:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` 형태의 키가 보이면 저장된 것입니다.
+
+```
+> GET cart:session:xxx
+```
+
+상품 정보가 JSON 배열로 출력됩니다.
+
+### 방법 B — 브라우저 DevTools로 확인
+
+1. DevTools → Network 탭 열기
+2. 장바구니 담기 클릭
+3. `POST /api/cart` 요청 확인
+4. Response에 `items` 배열이 있으면 Redis에 저장된 것
+
+---
+
+### SSR 렌더링 확인 (JavaScript 비활성 테스트)
+
+localStorage 방식과의 차이를 직접 확인합니다.
+
+1. 비로그인 상태에서 장바구니에 상품 담기
+2. DevTools → Settings → **Disable JavaScript** 체크
+3. `/cart` 페이지 새로고침
+4. 장바구니 상품이 보이면 SSR 정상 동작
+
+> localStorage 방식에서는 JS를 끄면 빈 화면이 나왔지만,  
+> Redis 방식에서는 서버에서 데이터를 읽어 초기 HTML에 포함하므로 JS 없이도 표시됩니다.
+
+---
+
 ## 체크리스트
 
 - [ ] Docker Desktop 실행 확인
@@ -127,3 +178,4 @@ Redis가 실행 중이지 않으면:
 - [ ] `apps/web/src/lib/redis.ts` 생성
 - [ ] `apps/web/src/instrumentation.ts` 생성
 - [ ] `pnpm dev` 실행 후 `✅ Redis 연결 성공` 로그 확인
+- [ ] 비로그인 상태에서 장바구니 담기 → `KEYS *` 에서 `cart:session:xxx` 확인

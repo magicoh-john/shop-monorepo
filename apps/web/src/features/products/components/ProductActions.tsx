@@ -3,29 +3,34 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Heart } from 'lucide-react';
-import { useCartStore } from '@/store/cartStore';
 import type { Product } from '@my-project/types';
 
 export default function ProductActions({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
   const router = useRouter();
-  const addItem = useCartStore((state) => state.addItem);
 
-  const cartItem = {
-    productId: product.id,
-    productName: product.name,
-    price: product.price,
-    quantity,
-    imageUrl: product.imageUrl ?? undefined,
+  const addToCart = async () => {
+    await fetch('/api/cart', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        productId: product.id,
+        productName: product.name,
+        price: product.price,
+        quantity,
+        imageUrl: product.imageUrl ?? undefined,
+      }),
+    });
+    router.refresh();
   };
 
-  const handleAddToCart = () => {
-    addItem(cartItem);
+  const handleAddToCart = async () => {
+    await addToCart();
     alert('장바구니에 추가되었습니다.');
   };
 
-  const handleOrder = () => {
-    addItem(cartItem);
+  const handleOrder = async () => {
+    await addToCart();
     router.push('/checkout');
   };
 
@@ -33,7 +38,6 @@ export default function ProductActions({ product }: { product: Product }) {
 
   return (
     <div className="flex flex-col gap-4">
-      {/* 수량 조절 */}
       <div className="flex items-center gap-3">
         <span className="text-sm text-muted-foreground w-8">수량</span>
         <div className="flex items-center border border-border rounded-[calc(var(--radius)-2px)]">
@@ -60,7 +64,6 @@ export default function ProductActions({ product }: { product: Product }) {
         )}
       </div>
 
-      {/* 버튼 영역 */}
       <div className="flex flex-col gap-2 mt-2">
         <button
           type="button"
