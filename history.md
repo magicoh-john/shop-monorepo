@@ -28,6 +28,39 @@
 
 ---
 
+## 2026-06-03
+
+### register/page.tsx 서버 컴포넌트로 리팩토링
+
+- **생성 파일**: `apps/web/src/features/auth/components/RegisterForm.tsx`
+- **수정 파일**: `apps/web/src/app/(auth)/register/page.tsx`
+- **주요 내용**: 전체가 클라이언트 컴포넌트였던 RegisterPage를 login/page.tsx와 동일한 패턴으로 분리. 서버 컴포넌트(카드 래퍼) + 클라이언트 컴포넌트(RegisterForm) 구조로 변경
+
+### 교육 문서 신규 작성
+
+- **생성 파일**: `docs/nextjs-server-client-components.md`, `docs/project-structure.md`
+- **주요 내용**:
+  - `nextjs-server-client-components.md` — Next.js App Router 동작 원리, 서버/클라이언트 컴포넌트 분리 이유, 실제 코드 기반 설명, 브라우저 전송 HTML 전문 포함
+  - `project-structure.md` — 폴더 구조 설계 이유, Route Group 역할, features/ 분리 근거(공식 문서 기반), 이중 세션 검증 등
+
+### types/next-auth.d.ts 주석 추가
+
+- **수정 파일**: `apps/web/src/types/next-auth.d.ts`
+- **주요 내용**: declare module 역할과 이 파일이 없을 때 발생하는 문제를 주석으로 설명
+
+### 문서 구조 정리 — 중복 제거 및 역할 분리
+
+- **수정 파일**: `CLAUDE.md`, `docs/ARCHITECTURE.md`, `docs/CLAUDE.md`
+- **주요 내용**:
+  - `CLAUDE.md` 폴더 구조 섹션 → `docs/ARCHITECTURE.md` 참조로 대체
+  - `CLAUDE.md` 비표준 규칙 표 → `docs/nextjs16.md` 참조로 대체
+  - `CLAUDE.md` Git 명령 섹션 추가 (루트에서 실행 규칙)
+  - `CLAUDE.md` 브랜치명 규칙 수정 (스펙번호 → 기능 내용 기반)
+  - `docs/ARCHITECTURE.md` 실제 현황 반영 (🔲 → ✅ 6건, wishlistStore/hooks 제거)
+  - `docs/CLAUDE.md` 참고용 파일임을 명시
+
+---
+
 ## 2026-05-31 (2)
 
 ### 스펙 01 — 공통 레이아웃 & TanStack Query Provider 완료
