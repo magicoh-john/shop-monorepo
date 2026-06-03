@@ -34,6 +34,7 @@ app.prepare().then(() => {
   });
 
   server.listen(process.env.PORT ?? 3000, () => {
-    console.log(`서버 실행 중: http://localhost:${process.env.PORT ?? 3000}`);
+    console.log(`✅ 서버 실행 중: http://localhost:${process.env.PORT ?? 3000}`);
+    console.log(`🔌 WebSocket 서버 실행 중: ws://localhost:${process.env.PORT ?? 3000}/ws`);
   });
 });
