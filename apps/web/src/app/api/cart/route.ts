@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
   return res;
 }
 
-// POST /api/cart — 상품 추가
+// POST /api/cart — 상품 추가 Api End point
 export async function POST(req: NextRequest) {
   const session = await auth();
 

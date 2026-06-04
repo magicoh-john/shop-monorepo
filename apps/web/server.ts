@@ -10,6 +10,7 @@ import { setupWebSocket } from "./src/lib/websocket";
 const app = next({ dev: process.env.NODE_ENV !== "production" });
 const handle = app.getRequestHandler();
 
+// Next.js 서버 준비 후 HTTP 서버와 WebSocket 서버 시작
 app.prepare().then(() => {
   const server = createServer((req, res) => {
     const parsedUrl = parse(req.url!, true);
